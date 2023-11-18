@@ -2,4 +2,5 @@
 .eslintcache
 
 # ignore specific folders
+dist
 node_modules
