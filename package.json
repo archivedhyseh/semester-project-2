@@ -7,10 +7,13 @@
   "author": "John Hofland <john.hofland@outlook.com> (http://hyseh.dev/)",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier -w src/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/hyseh/semester-project-2.git"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0"
   }
 }
