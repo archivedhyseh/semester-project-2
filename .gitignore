@@ -1,4 +1,5 @@
 # ignore specific files
+.eslintcache
 
 # ignore specific folders
 node_modules
