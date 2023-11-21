@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/css/main.css" />
+  </head>
+  <body class="bg-neutral-900">
+    <main class="h-screen">
+      <div
+        class="mx-auto flex h-full max-w-md flex-col justify-center p-5 md:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
+      >
+        <div
+          class="flex flex-col justify-center gap-3 rounded-t-xl bg-neutral-50 px-5 pt-5"
+        >
+          <div class="flex justify-end">
+            <a href="./index.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-8 w-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div
+          class="flex h-96 flex-col justify-center gap-3 rounded-b-xl bg-neutral-50 p-5 md:p-12 2xl:p-16"
+        >
+          <div>
+            <h1 class="text-2xl font-bold">Sign up</h1>
+          </div>
+          <div>
+            <form class="flex flex-col gap-3">
+              <input
+                class="w-full rounded-md border border-neutral-300 px-3 py-2 placeholder:text-neutral-600"
+                type="text"
+                id="login-name"
+                placeholder="Name"
+              />
+              <input
+                class="w-full rounded-md border border-neutral-300 px-3 py-2 placeholder:text-neutral-600"
+                type="email"
+                id="login-email"
+                placeholder="Email address"
+              />
+              <input
+                class="w-full rounded-md border border-neutral-300 px-3 py-2 placeholder:text-neutral-600"
+                type="password"
+                id="login-password"
+                placeholder="Password"
+              />
+              <div class="hidden" id="register-message"></div>
+              <button
+                class="w-full cursor-pointer rounded-md bg-neutral-900 px-3 py-2 font-bold text-white"
+              >
+                Sign up
+              </button>
+            </form>
+          </div>
+          <div>
+            <p>
+              Have an account?
+              <a
+                class="font-bold text-black underline-offset-2 hover:underline"
+                href="./login.html"
+                >Sign in</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
