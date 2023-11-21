@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <script src="./src/js/components/nav.js" defer></script>
+  </head>
+  <body class="bg-neutral-900">
+    <header>
+      <div class="bg-neutral-50">
+        <div class="mx-auto max-w-6xl">
+          <div class="flex min-h-[4rem] justify-between md:justify-normal">
+            <div class="flex items-center">
+              <a href="./index.html" class="px-3 py-2">Logo</a>
+            </div>
+            <div class="flex items-center md:hidden">
+              <button
+                class="px-3 py-2"
+                id="navigation-button"
+                aria-controls="primary-navigation"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Menu</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="h-6 w-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 9h16.5m-16.5 6.75h16.5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <nav
+              class="absolute left-0 top-16 hidden h-full w-full items-center bg-neutral-50 md:static md:flex md:justify-between"
+              id="navigation-menu"
+            >
+              <ul class="flex flex-col md:flex-row" id="primary-navigation">
+                <li class="px-3 py-3 md:py-5">
+                  <a href="./index.html">Home</a>
+                </li>
+                <li class="px-3 py-3 md:py-5"><a href="">Explore</a></li>
+              </ul>
+              <ul class="flex flex-col md:flex-row" id="secondary-navigation">
+                <li class="px-3 py-3 md:py-5">
+                  <a href="./login.html">Log in</a>
+                </li>
+                <li class="px-3 py-3 md:py-5">
+                  <a href="./signup.html">Sign up</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main></main>
+
+    <footer></footer>
+  </body>
+</html>
