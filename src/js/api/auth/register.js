@@ -8,9 +8,6 @@ export async function register(name, email, password) {
     },
     body: JSON.stringify({ name, email, password }),
   });
-
-  if (res.ok) {
-    const data = await res.json();
-    return data;
-  }
+  const data = await res.json();
+  return data;
 }
