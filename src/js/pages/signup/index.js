@@ -1,5 +1,5 @@
-import { login } from './api/auth/login.js';
-import { register } from './api/auth/register.js';
+import { login } from '../../api/auth/login.js';
+import { register } from '../../api/auth/register.js';
 
 const signupName = document.querySelector('#signup-name');
 const signupEmail = document.querySelector('#signup-email');

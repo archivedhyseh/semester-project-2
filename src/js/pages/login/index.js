@@ -1,4 +1,4 @@
-import { login } from './api/auth/login.js';
+import { login } from '../../api/auth/login.js';
 
 const loginEmail = document.querySelector('#login-email');
 const loginPassword = document.querySelector('#login-password');
