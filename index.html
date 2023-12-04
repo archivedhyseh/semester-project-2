@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./dist/css/main.css" />
     <script src="./src/js/components/nav.js" defer></script>
+    <script type="module" src="./src/js/pages/index/index.js"></script>
   </head>
   <body class="bg-neutral-900">
     <header>
@@ -40,14 +41,16 @@
               </button>
             </div>
             <nav
-              class="absolute left-0 top-16 hidden h-full w-full items-center bg-neutral-50 md:static md:flex md:justify-between"
+              class="absolute left-0 top-16 z-50 hidden h-full w-full items-center bg-neutral-50 md:static md:flex md:justify-between"
               id="navigation-menu"
             >
               <ul class="flex flex-col md:flex-row" id="primary-navigation">
                 <li class="px-3 py-3 md:py-5">
                   <a href="./index.html">Home</a>
                 </li>
-                <li class="px-3 py-3 md:py-5"><a href="">Explore</a></li>
+                <li class="px-3 py-3 md:py-5">
+                  <a href="./explore.html">Explore</a>
+                </li>
               </ul>
               <ul class="flex flex-col md:flex-row" id="secondary-navigation">
                 <li class="px-3 py-3 md:py-5">
@@ -62,9 +65,59 @@
         </div>
       </div>
     </header>
+    <main>
+      <section id="search-section" class="bg-neutral-50">
+        <div class="mx-auto max-w-6xl">
+          <div class="px-3 pb-5">
+            <form class="flex flex-row items-center gap-3">
+              <div class="relative w-full">
+                <div
+                  class="absolute bottom-0 left-0 top-0 flex items-center gap-3 px-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6 stroke-neutral-600"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  class="w-full rounded-md border border-neutral-300 px-3 py-2 pl-12 placeholder:text-neutral-600"
+                  type="search"
+                  id="search-input"
+                  placeholder="Search"
+                />
+              </div>
+              <button
+                class="cursor-pointer rounded-md bg-neutral-900 px-3 py-2 font-bold text-white"
+                id="search-button"
+              >
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
 
-    <main></main>
-
-    <footer></footer>
+      <section id="explore-section" class="bg-white">
+        <div class="mx-auto max-w-6xl">
+          <div class="flex flex-col gap-3 px-3 py-5">
+            <h2 class="text-2xl font-bold">Newest</h2>
+            <div
+              class="grid auto-rows-fr gap-3 sm:grid-cols-2 lg:grid-cols-3"
+              id="listings-container"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
