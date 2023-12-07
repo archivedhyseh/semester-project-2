@@ -1,6 +1,7 @@
-export const timeDistance = (date) => {
+export function timeDistance(date) {
   const current = new Date();
   const ending = new Date(date);
+  let time;
 
   const diff = Math.floor(ending - current) / 1000;
   let ms = diff;
@@ -13,11 +14,11 @@ export const timeDistance = (date) => {
   ms -= minutes * 60;
   const seconds = Math.floor(ms % 60);
 
-  let time = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
   if (diff <= 0) {
     time = 'Auction ended';
+  } else {
+    time = `${days}d ${hours}h ${minutes}m ${seconds}s`;
   }
 
   return time;
-};
+}
