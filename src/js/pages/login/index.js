@@ -1,4 +1,5 @@
 import { login } from '../../api/auth/login.js';
+import { param } from '../../utility/params.js';
 
 const loginEmail = document.querySelector('#login-email');
 const loginPassword = document.querySelector('#login-password');
@@ -14,10 +15,17 @@ loginButton.addEventListener('click', async (e) => {
 });
 
 async function loginValidation(data) {
+  const id = param.get('id');
+
   if (data.errors) {
     const message = 'Invalid email or password.';
     loginMessage.classList.remove('hidden');
     loginMessage.innerHTML = `<p>${message}</p>`;
+  } else if (!(id === null || id === '')) {
+    loginMessage.classList.add('hidden');
+    localStorage.setItem('name', data.name);
+    localStorage.setItem('token', data.accessToken);
+    setTimeout((window.location = `./listing.html?id=${id}`), 100);
   } else {
     loginMessage.classList.add('hidden');
     localStorage.setItem('name', data.name);

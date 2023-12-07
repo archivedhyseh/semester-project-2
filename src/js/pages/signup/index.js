@@ -1,5 +1,6 @@
 import { login } from '../../api/auth/login.js';
 import { register } from '../../api/auth/register.js';
+import { param } from '../../utility/params.js';
 
 const signupName = document.querySelector('#signup-name');
 const signupEmail = document.querySelector('#signup-email');
@@ -66,10 +67,17 @@ async function signupValidation(data) {
 }
 
 async function autoLogin(data) {
+  const id = param.get('id');
+
   if (data.errors) {
     const message = data.errors[0].message;
     signupMessage.classList.remove('hidden');
     signupMessage.innerHTML = `<p>${message}</p>`;
+  } else if (!(id === null || id === '')) {
+    signupMessage.classList.add('hidden');
+    localStorage.setItem('name', data.name);
+    localStorage.setItem('token', data.accessToken);
+    setTimeout((window.location = `./listing.html?id=${id}`), 100);
   } else {
     localStorage.setItem('name', data.name);
     localStorage.setItem('token', data.accessToken);
