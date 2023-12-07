@@ -1,5 +1,5 @@
 import { getListings } from '../../api/listings/listings.js';
-import { renderListings } from '../../components/cards.js';
+import { renderListings } from '../../components/cards/explore/index.js';
 import { searchListener } from './search.js';
 
 searchListener();
