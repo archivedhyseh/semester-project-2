@@ -1,4 +1,4 @@
-const param = new URLSearchParams(window.location.search);
+import { param } from '../../utility/params.js';
 
 const searchInput = document.querySelector('#search-input');
 const searchBtn = document.querySelector('#search-button');

@@ -1,6 +1,6 @@
-const param = new URLSearchParams(window.location.search);
+import { param } from '../../utility/params.js';
 
-export async function pagination(offset, data, page) {
+export async function pagination(offset, data, limit, page) {
   const prevBtn = document.querySelector('#prev-button');
   const nextBtn = document.querySelector('#next-button');
 
@@ -8,7 +8,7 @@ export async function pagination(offset, data, page) {
     prevBtn.classList.add('hidden');
   }
 
-  if (data.length === 0) {
+  if (data.length < limit) {
     nextBtn.classList.add('hidden');
   }
 
