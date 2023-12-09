@@ -49,7 +49,12 @@ function renderBids(data) {
   // current bid
   const bid = document.createElement('p');
   bid.classList.add('text-2xl');
-  bid.innerText = getHighestBid(data.bids);
+  const highestBid = getHighestBid(data.bids);
+  if (highestBid === undefined || highestBid.length <= 0) {
+    bid.innerText = 'No current bids';
+  } else {
+    bid.innerText = `${highestBid.amount} credits`;
+  }
 
   // append
   container.appendChild(label);
@@ -176,7 +181,7 @@ function renderIsLoggedIn() {
   label.innerText = 'Amount to bid';
 
   // form
-  const form = document.createElement('div');
+  const form = document.createElement('form');
   form.classList.add('flex', 'flex-row', 'gap-3');
 
   // form input
@@ -190,6 +195,7 @@ function renderIsLoggedIn() {
     'py-2',
     'placeholder:text-neutral-600',
   );
+  input.id = 'bid-input';
   input.type = 'number';
   input.min = '1';
   input.placeholder = '0';
@@ -204,17 +210,20 @@ function renderIsLoggedIn() {
     'font-bold',
     'text-white',
   );
+  submit.id = 'bid-button';
   submit.innerText = 'Place bid';
-  submit.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('clicked');
-  });
+
+  // feedback
+  const feedback = document.createElement('div');
+  feedback.classList.add('hidden');
+  feedback.id = 'bid-message';
 
   // append
   container.appendChild(label);
   form.appendChild(input);
   form.appendChild(submit);
   container.appendChild(form);
+  container.appendChild(feedback);
 
   // return
   return container;
