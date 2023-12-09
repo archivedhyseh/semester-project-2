@@ -22,24 +22,20 @@ export function renderInformation(data) {
     title.innerText = data.title;
   }
 
-  // description
-  /* const description = document.createElement('p');
-  description.classList.add('line-clamp-2');
-  if (data.description === null || data.description === '') {
-    description.innerText = 'No description';
+  // bid
+  const bid = document.createElement('p');
+  bid.classList.add('text-xl');
+  const highestBid = getHighestBid(data.bids);
+  if (highestBid === undefined || highestBid.length <= 0) {
+    bid.innerText = 'No current bids';
   } else {
-    description.innerText = data.description;
-  } */
-
-  // bids
-  const bids = document.createElement('p');
-  bids.classList.add('text-xl');
-  bids.innerText = getHighestBid(data.bids);
+    bid.innerText = `${highestBid.amount} credits`;
+  }
 
   // append
   container.appendChild(timer);
   wrapper.appendChild(title);
-  wrapper.appendChild(bids);
+  wrapper.appendChild(bid);
   container.appendChild(wrapper);
 
   // return
