@@ -8,13 +8,13 @@
     <script src="./src/js/components/nav.js" defer></script>
     <script type="module" src="./src/js/pages/index/index.js"></script>
   </head>
-  <body class="bg-neutral-900">
-    <header>
+  <body>
+    <header class="sticky left-0 top-0 z-20 md:static">
       <div class="bg-neutral-50">
         <div class="mx-auto max-w-6xl">
           <div class="flex min-h-[4rem] justify-between md:justify-normal">
             <div class="flex items-center">
-              <a href="./index.html" class="px-3 py-2">Logo</a>
+              <a href="./index.html" class="px-3 py-2 font-bold">SWIFTLY</a>
             </div>
             <div class="flex items-center md:hidden">
               <button
@@ -40,27 +40,19 @@
                 </svg>
               </button>
             </div>
-            <nav
-              class="absolute left-0 top-16 z-50 hidden h-full w-full items-center bg-neutral-50 md:static md:flex md:justify-between"
+            <div
+              class="absolute left-0 top-16 hidden h-screen w-full items-center bg-neutral-50 md:static md:flex md:h-auto md:justify-between"
               id="navigation-menu"
             >
-              <ul class="flex flex-col md:flex-row" id="primary-navigation">
-                <li class="px-3 py-3 md:py-5">
-                  <a href="./index.html">Home</a>
-                </li>
-                <li class="px-3 py-3 md:py-5">
-                  <a href="./explore.html">Explore</a>
-                </li>
-              </ul>
-              <ul class="flex flex-col md:flex-row" id="secondary-navigation">
-                <li class="px-3 py-3 md:py-5">
-                  <a href="./login.html">Log in</a>
-                </li>
-                <li class="px-3 py-3 md:py-5">
-                  <a href="./signup.html">Sign up</a>
-                </li>
-              </ul>
-            </nav>
+              <div class="flex flex-col md:flex-row" id="primary-navigation">
+                <a href="./index.html" class="p-3 md:py-2">Home</a>
+                <a href="./explore.html" class="p-3 md:py-2">Explore</a>
+              </div>
+              <div class="flex flex-col md:flex-row" id="secondary-navigation">
+                <a href="./login.html" class="p-3 md:py-2">Log in</a>
+                <a href="./signup.html" class="p-3 md:py-2">Sign up</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
