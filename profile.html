@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/css/main.css" />
+    <script type="module" src="./src/js/pages/profile/index.js"></script>
+  </head>
+  <body>
+    <main>
+      <section id="profile-section" class="bg-white">
+        <div class="mx-auto max-w-6xl">
+          <div class="flex flex-col gap-3 px-5 py-5">
+            <div
+              class="flex flex-col gap-5 rounded-md bg-neutral-100 p-3 sm:flex-row sm:p-5"
+              id="profile-container"
+            >
+              <div class="flex flex-row justify-center">
+                <div
+                  class="relative aspect-square h-32 w-32 overflow-hidden rounded-full"
+                >
+                  <div
+                    class="absolute h-full w-full animate-pulse overflow-hidden bg-neutral-300 object-cover"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="flex w-full flex-col gap-5 sm:flex-row sm:justify-between"
+              >
+                <div class="flex w-full flex-col justify-between gap-5 sm:w-64">
+                  <div
+                    class="h-10 w-full animate-pulse rounded-md bg-neutral-300"
+                  ></div>
+                  <div
+                    class="h-5 w-full animate-pulse rounded-md bg-neutral-300"
+                  ></div>
+                </div>
+                <div
+                  class="h-10 w-full animate-pulse rounded-md bg-neutral-300 sm:w-32"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
