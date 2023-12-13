@@ -31,9 +31,9 @@ function primaryNavigation() {
   const container = document.querySelector('#primary-navigation');
 
   container.innerHTML = `
-    <a href="./index.html" class="p-3 md:py-2">Home</a>
-    <a href="./explore.html" class="p-3 md:py-2">Explore</a>
-    <a href="./create.html" class="p-3 md:py-2">Create</a>
+    <a href="./index.html" class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2">Home</a>
+    <a href="./explore.html" class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2">Explore</a>
+    <a href="./create.html" class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2">Create</a>
     `;
 }
 
@@ -43,11 +43,23 @@ function secondaryNavigation() {
 
   const profile = document.createElement('a');
   profile.href = './profile.html';
-  profile.classList.add('p-3', 'md:py-2');
+  profile.classList.add(
+    'rounded-lg',
+    'p-3',
+    'duration-200',
+    'hover:bg-neutral-200',
+    'md:py-2',
+  );
   profile.innerText = 'Profile';
 
   const logout = document.createElement('button');
-  logout.classList.add('p-3', 'text-left', 'md:py-2', 'md:text-center');
+  logout.classList.add(
+    'rounded-lg',
+    'p-3',
+    'duration-200',
+    'hover:bg-neutral-200',
+    'md:py-2',
+  );
   logout.innerText = 'Sign out';
   logout.addEventListener('click', () => {
     localStorage.removeItem('token');

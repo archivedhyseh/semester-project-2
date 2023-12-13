@@ -9,49 +9,63 @@
     <script type="module" src="./src/js/pages/index/index.js"></script>
   </head>
   <body>
-    <header class="sticky left-0 top-0 z-20 md:static">
-      <div class="bg-neutral-50">
-        <div class="mx-auto max-w-6xl">
-          <div class="flex min-h-[4rem] justify-between md:justify-normal">
-            <div class="flex items-center">
-              <a href="./index.html" class="px-3 py-2 font-bold">SWIFTLY</a>
-            </div>
-            <div class="flex items-center md:hidden">
-              <button
-                class="px-3 py-2"
-                id="navigation-button"
-                aria-controls="primary-navigation"
-                aria-expanded="false"
-              >
-                <span class="sr-only">Menu</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-6 w-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 9h16.5m-16.5 6.75h16.5"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              class="absolute left-0 top-16 hidden h-screen w-full items-center bg-neutral-50 md:static md:flex md:h-auto md:justify-between"
-              id="navigation-menu"
+    <header class="sticky left-0 top-0 z-20 bg-neutral-50 md:static">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex min-h-[4rem] justify-between md:justify-normal">
+          <div class="flex items-center">
+            <a href="./index.html" class="px-3 py-2 font-bold">SWIFTLY</a>
+          </div>
+          <div class="flex items-center md:hidden">
+            <button
+              class="px-3 py-2"
+              id="navigation-button"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
             >
-              <div class="flex flex-col md:flex-row" id="primary-navigation">
-                <a href="./index.html" class="p-3 md:py-2">Home</a>
-                <a href="./explore.html" class="p-3 md:py-2">Explore</a>
-              </div>
-              <div class="flex flex-col md:flex-row" id="secondary-navigation">
-                <a href="./login.html" class="p-3 md:py-2">Log in</a>
-                <a href="./signup.html" class="p-3 md:py-2">Sign up</a>
-              </div>
+              <span class="sr-only">Menu</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 9h16.5m-16.5 6.75h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="absolute left-0 top-16 hidden h-screen w-full items-center bg-neutral-50 md:static md:flex md:h-auto md:justify-between"
+            id="navigation-menu"
+          >
+            <div class="flex flex-col md:flex-row" id="primary-navigation">
+              <a
+                href="./index.html"
+                class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2"
+                >Home</a
+              >
+              <a
+                href="./explore.html"
+                class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2"
+                >Explore</a
+              >
+            </div>
+            <div class="flex flex-col md:flex-row" id="secondary-navigation">
+              <a
+                href="./login.html"
+                class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2"
+                >Log in</a
+              >
+              <a
+                href="./signup.html"
+                class="rounded-lg p-3 duration-200 hover:bg-neutral-200 md:py-2"
+                >Sign up</a
+              >
             </div>
           </div>
         </div>
@@ -98,8 +112,7 @@
           </div>
         </div>
       </section>
-
-      <section id="hero-section" class="bg-neutral-50">
+      <section id="hero-section" class="bg-neutral-100">
         <div class="mx-auto max-w-6xl">
           <div
             class="flex min-h-[60vh] flex-col items-center justify-center gap-5 px-3 py-5"
@@ -125,7 +138,6 @@
           </div>
         </div>
       </section>
-
       <section id="explore-section" class="bg-white">
         <div class="mx-auto max-w-6xl">
           <div class="flex flex-col gap-3 px-3 py-5">
@@ -241,5 +253,25 @@
         </div>
       </section>
     </main>
+    <footer>
+      <div class="bg-neutral-50">
+        <div class="mx-auto max-w-6xl">
+          <div class="px-3 py-5">
+            <div class="flex flex-row flex-wrap justify-center">
+              <div class="flex flex-wrap justify-center">
+                <p class="whitespace-nowrap p-3 md:py-2">About</p>
+                <p class="whitespace-nowrap p-3 md:py-2">Careers</p>
+                <p class="whitespace-nowrap p-3 md:py-2">Developers</p>
+              </div>
+              <div class="flex flex-wrap justify-center">
+                <p class="whitespace-nowrap p-3 md:py-2">Privacy policy</p>
+                <p class="whitespace-nowrap p-3 md:py-2">Terms of service</p>
+                <p class="whitespace-nowrap p-3 md:py-2">Coockie preferences</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
