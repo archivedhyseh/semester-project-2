@@ -24,9 +24,12 @@ export function renderListings(data, limit) {
       'flex',
       'flex-col',
       'gap-3',
-      // 'rounded-xl',
-      'bg-neutral-100',
+      'rounded-md',
+      'bg-neutral-50',
       'p-3',
+      'transition',
+      'duration-200',
+      'hover:bg-neutral-200',
     );
 
     // anchor
