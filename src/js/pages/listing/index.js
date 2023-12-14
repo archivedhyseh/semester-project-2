@@ -9,7 +9,13 @@ const listing = async (id) => {
   const data = await getListing(id);
   console.log(data);
   renderListing(data);
-  placeBid(id);
+
+  const currentSeller = data.seller.name;
+  const currentUser = localStorage.getItem('name');
+
+  if (currentSeller !== currentUser) {
+    placeBid(data);
+  }
 };
 
 listing(id);
