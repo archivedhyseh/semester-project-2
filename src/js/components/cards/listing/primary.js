@@ -23,7 +23,7 @@ export function renderPrimary(data) {
   const timer = renderEnding(data);
 
   // checks if logged in
-  const loginChecker = checkLoggedIn();
+  const loginChecker = checkLoggedIn(data);
 
   // append
   container.appendChild(title);
@@ -90,16 +90,23 @@ function renderEnding(data) {
   return container;
 }
 
-function checkLoggedIn() {
+function checkLoggedIn(data) {
   // checks for token
   const token = localStorage.getItem('token');
   let container;
+
+  const seller = data.seller.name;
+  const name = localStorage.getItem('name');
 
   // if statement
   if (token === null || token === '') {
     console.log('no token');
     const login = renderNotloggedIn();
     container = login;
+    return container;
+  } else if (seller === name) {
+    const options = renderEditDelete();
+    container = options;
     return container;
   } else {
     console.log('token found');
@@ -137,6 +144,9 @@ function renderNotloggedIn() {
     'py-2',
     'font-bold',
     'text-white',
+    'transition',
+    'duratiion-200',
+    'hover:bg-neutral-600',
   );
   loginBtn.innerText = 'Log in';
   loginBtn.addEventListener('click', () => {
@@ -154,6 +164,9 @@ function renderNotloggedIn() {
     'py-2',
     'font-bold',
     'text-white',
+    'transition',
+    'duratiion-200',
+    'hover:bg-neutral-600',
   );
   signupBtn.innerText = 'Sign up';
   signupBtn.addEventListener('click', () => {
@@ -170,7 +183,10 @@ function renderNotloggedIn() {
   return container;
 }
 
-function renderIsLoggedIn() {
+function renderEditDelete() {
+  const id = param.get('id');
+  console.log(id);
+
   // container
   const container = document.createElement('div');
   container.classList.add('flex', 'flex-col', 'gap-2');
@@ -178,11 +194,64 @@ function renderIsLoggedIn() {
   // label
   const label = document.createElement('p');
   label.classList.add('text-neutral-600');
+  label.innerText = 'Options';
+
+  // wrapper
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('flex', 'flex-row', 'gap-3');
+
+  // login button
+  const editBtn = document.createElement('button');
+  editBtn.classList.add(
+    'w-full',
+    'cursor-pointer',
+    'rounded-md',
+    'bg-neutral-900',
+    'px-3',
+    'py-2',
+    'font-bold',
+    'text-white',
+  );
+  editBtn.innerText = 'Edit';
+
+  // signup button
+  const deleteBtn = document.createElement('button');
+  deleteBtn.classList.add(
+    'w-full',
+    'cursor-pointer',
+    'rounded-md',
+    'bg-neutral-900',
+    'px-3',
+    'py-2',
+    'font-bold',
+    'text-white',
+  );
+  deleteBtn.innerText = 'Delete';
+
+  // append
+  container.appendChild(label);
+  wrapper.appendChild(editBtn);
+  wrapper.appendChild(deleteBtn);
+  container.appendChild(wrapper);
+
+  // return
+  return container;
+}
+
+function renderIsLoggedIn() {
+  // container
+  const container = document.createElement('form');
+  container.classList.add('flex', 'flex-col', 'gap-2');
+
+  // label
+  const label = document.createElement('label');
+  label.classList.add('text-neutral-600');
+  label.htmlFor = 'bid-input';
   label.innerText = 'Amount to bid';
 
-  // form
-  const form = document.createElement('form');
-  form.classList.add('flex', 'flex-row', 'gap-3');
+  // wrapper
+  const wrapper = document.createElement('div');
+  wrapper.classList.add('flex', 'flex-row', 'gap-3');
 
   // form input
   const input = document.createElement('input');
@@ -195,23 +264,28 @@ function renderIsLoggedIn() {
     'py-2',
     'placeholder:text-neutral-600',
   );
-  input.id = 'bid-input';
+  input.id = 'bid-amount';
   input.type = 'number';
   input.min = '1';
   input.placeholder = '0';
 
-  // form submit button
-  const submit = document.createElement('button');
-  submit.classList.add(
+  // form button
+  const button = document.createElement('button');
+  button.classList.add(
     'w-full',
     'cursor-pointer',
     'rounded-md',
     'bg-neutral-900',
+    'px-3',
+    'py-2',
     'font-bold',
     'text-white',
+    'transition',
+    'duration-200',
+    'hover:bg-neutral-600',
   );
-  submit.id = 'bid-button';
-  submit.innerText = 'Place bid';
+  button.id = 'bid-button';
+  button.innerText = 'Place bid';
 
   // feedback
   const feedback = document.createElement('div');
@@ -220,9 +294,9 @@ function renderIsLoggedIn() {
 
   // append
   container.appendChild(label);
-  form.appendChild(input);
-  form.appendChild(submit);
-  container.appendChild(form);
+  wrapper.appendChild(input);
+  wrapper.appendChild(button);
+  container.appendChild(wrapper);
   container.appendChild(feedback);
 
   // return
