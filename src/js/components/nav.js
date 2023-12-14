@@ -15,17 +15,15 @@ navBtn.addEventListener('click', () => {
   }
 });
 
-const navLoad = () => {
+function navLoad() {
   const token = localStorage.getItem('token');
 
   if (token) {
     console.log('token found');
     primaryNavigation();
     secondaryNavigation();
-  } else {
-    console.log('no token');
   }
-};
+}
 
 function primaryNavigation() {
   const container = document.querySelector('#primary-navigation');
@@ -57,9 +55,11 @@ function secondaryNavigation() {
   logout.classList.add(
     'rounded-lg',
     'p-3',
+    'text-left',
     'transition',
     'duration-200',
     'hover:bg-neutral-200',
+    'md:text-center',
     'md:py-2',
   );
   logout.innerText = 'Sign out';
