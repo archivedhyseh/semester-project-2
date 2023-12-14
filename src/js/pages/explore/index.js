@@ -1,4 +1,5 @@
 import { getListings } from '../../api/listings/listings.js';
+import { renderError } from '../../components/errors.js';
 import { renderListings } from '../../components/cards/explore/index.js';
 import { pagination } from './paginate.js';
 import { getSearchParam, searchListener } from './search.js';
@@ -23,9 +24,14 @@ const listings = async (
 ) => {
   const data = await getListings(limit, offset, sort, active, search);
 
-  renderListings(data, limit);
-  pagination(offset, data, limit, page);
-  searchListener(page);
+  if (data.errors) {
+    const section = document.querySelector('#explore-section');
+    renderError(section);
+  } else {
+    renderListings(data, limit);
+    pagination(offset, data, limit, page);
+    searchListener(page);
+  }
 };
 
 listings(limit, offset, descending, true, search);

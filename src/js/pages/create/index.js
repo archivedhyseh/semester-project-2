@@ -10,6 +10,7 @@ const createTitle = document.querySelector('#create-title');
 const createDuration = document.querySelectorAll('#create-duration input');
 const createDescription = document.querySelector('#create-description');
 const createTags = document.querySelector('#create-tags');
+const createMessage = document.querySelector('#create-message');
 const createButton = document.querySelector('#create-button');
 
 createButton.addEventListener('click', async (e) => {
@@ -73,11 +74,14 @@ async function formValidation() {
     const data = await postListing(title, description, tags, media, endsAt);
 
     if (data.errors) {
-      console.log('something wrong with api');
+      const message = 'Something went wrong. Please try again later.';
+      createMessage.innerHTML = `<p>${message}</p>`;
+      createMessage.classList.remove('hidden');
     } else {
-      setTimeout((window.location = `./listing.html?id=${data.id}`), 100);
+      createMessage.classList.add('hidden');
+      setTimeout(() => {
+        window.location = `./listing.html?id=${data.id}`;
+      }, 100);
     }
-  } else {
-    console.log('form is not valid');
   }
 }
