@@ -22,35 +22,18 @@ function getDuration(value) {
   const today = new Date();
   let date;
 
-  if (value === 6) {
-    today.setHours(today.getHours() + value);
-    date = new Date(today).toISOString();
+  switch (value) {
+    case 6:
+    case 12:
+    case 24:
+    case 48:
+    case 128:
+    case 336:
+      today.setHours(today.getHours() + value);
+      date = new Date(today).toISOString();
   }
 
-  if (value === 12) {
-    today.setHours(today.getHours() + value);
-    date = new Date(today).toISOString();
-  }
-
-  if (value === 24) {
-    today.setHours(today.getHours() + value);
-    date = new Date(today).toISOString();
-  }
-
-  if (value === 48) {
-    today.setHours(today.getHours() + value);
-    date = new Date(today).toISOString();
-  }
-
-  if (value === 168) {
-    today.setHours(today.getHours() + value);
-    date = new Date(today).toISOString();
-  }
-
-  if (value === 336) {
-    today.setHours(today.getHours() + value);
-    date = new Date(today).toISOString();
-  }
+  console.log(date);
 
   return date;
 }
