@@ -1,7 +1,9 @@
 import { getListings } from '../../api/listings/listings.js';
 import { renderListings } from '../../components/cards/explore/index.js';
+import { heroLoad } from './hero.js';
 import { searchListener } from './search.js';
 
+heroLoad();
 searchListener();
 
 const listings = async (
