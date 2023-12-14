@@ -23,20 +23,16 @@ async function signupValidation(data) {
   const signupPasswordError = document.querySelector('#signup-password-error');
 
   signupNameError.classList.add('hidden');
-  signupNameError.innerHTML = '';
   signupEmailError.classList.add('hidden');
-  signupEmailError.innerHTML = '';
   signupPasswordError.classList.add('hidden');
-  signupPasswordError.innerHTML = '';
   signupMessage.classList.add('hidden');
-  signupMessage.innerHTML = '';
 
   if (data.errors) {
     for (let i = 0; i < data.errors.length; i++) {
       if (data.errors[0].message === 'Profile already exists') {
         const message = 'Account already exists.';
-        signupMessage.classList.remove('hidden');
         signupMessage.innerHTML = `<p>${message}</p>`;
+        signupMessage.classList.remove('hidden');
       } else {
         if (data.errors[i].path[0] === 'name') {
           if (
@@ -44,26 +40,26 @@ async function signupValidation(data) {
             'Name cannot be greater than 20 characters'
           ) {
             const message = 'Names cannot be more than 20 characters long.';
-            signupNameError.classList.remove('hidden');
             signupNameError.innerHTML = `<p>${message}</p>`;
+            signupNameError.classList.remove('hidden');
           } else {
             const message =
               'Names can only use letters, numbers and underscores.';
-            signupNameError.classList.remove('hidden');
             signupNameError.innerHTML = `<p>${message}</p>`;
+            signupNameError.classList.remove('hidden');
           }
         }
 
         if (data.errors[i].path[0] === 'email') {
           const message = 'Only @noroff.no emails are allowed to register.';
-          signupEmailError.classList.remove('hidden');
           signupEmailError.innerHTML = `<p>${message}</p>`;
+          signupEmailError.classList.remove('hidden');
         }
 
         if (data.errors[i].path[0] === 'password') {
           const message = 'Password must be at least 8 characters long.';
-          signupPasswordError.classList.remove('hidden');
           signupPasswordError.innerHTML = `<p>${message}</p>`;
+          signupPasswordError.classList.remove('hidden');
         }
       }
     }
@@ -80,14 +76,15 @@ async function autoLogin(data) {
 
   if (data.errors) {
     const message = data.errors[0].message;
-    signupMessage.classList.remove('hidden');
     signupMessage.innerHTML = `<p>${message}</p>`;
+    signupMessage.classList.remove('hidden');
   } else if (!(id === null || id === '')) {
     signupMessage.classList.add('hidden');
     localStorage.setItem('name', data.name);
     localStorage.setItem('token', data.accessToken);
     setTimeout((window.location = `./listing.html?id=${id}`), 100);
   } else {
+    signupMessage.classList.add('hidden');
     localStorage.setItem('name', data.name);
     localStorage.setItem('token', data.accessToken);
     setTimeout((window.location = './index.html'), 100);

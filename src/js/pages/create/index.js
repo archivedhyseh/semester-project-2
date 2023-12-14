@@ -22,8 +22,8 @@ async function formValidation() {
   const media = getMedia(createMedia);
   const title = createTitle.value;
   const description = createDescription.value;
-  const endsAt = getEndingDate(createDuration);
   const tags = convertTags(createTags);
+  const endsAt = getEndingDate(createDuration);
 
   // errors
   const mediaError = document.querySelector('#create-media-error');
@@ -37,8 +37,8 @@ async function formValidation() {
 
   if (media === '' || media === undefined) {
     const message = 'Media is required.';
-    mediaError.classList.remove('hidden');
     mediaError.innerHTML = `<p>${message}</p>`;
+    mediaError.classList.remove('hidden');
     isMediaValid = false;
   } else {
     mediaError.classList.add('hidden');
@@ -47,8 +47,8 @@ async function formValidation() {
 
   if (title === '') {
     const message = 'Title is required.';
-    titleError.classList.remove('hidden');
     titleError.innerHTML = `<p>${message}</p>`;
+    titleError.classList.remove('hidden');
     isTitleValid = false;
   } else {
     titleError.classList.add('hidden');
@@ -57,15 +57,13 @@ async function formValidation() {
 
   if (endsAt === '' || endsAt === undefined) {
     const message = 'Duration is required.';
-    endingError.classList.remove('hidden');
     endingError.innerHTML = `<p>${message}</p>`;
+    endingError.classList.remove('hidden');
     isEndingValid = false;
   } else {
     endingError.classList.add('hidden');
     isEndingValid = true;
   }
-
-  // console.log(isMediaValid, isTitleValid, isEndingValid);
 
   if (
     isMediaValid === true &&

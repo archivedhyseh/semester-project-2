@@ -22,12 +22,12 @@ async function formValidation(data) {
 
   if (currentUser === highestBidder) {
     const message = 'You are already the highest bidder.';
-    bidMessage.classList.remove('hidden');
     bidMessage.innerHTML = `<p>${message}</p>`;
+    bidMessage.classList.remove('hidden');
   } else if (amount === '' || amount === 0) {
     const message = 'A bid amount is required.';
-    bidMessage.classList.remove('hidden');
     bidMessage.innerHTML = `<p>${message}</p>`;
+    bidMessage.classList.remove('hidden');
     isAmountValid = false;
   } else {
     bidMessage.classList.add('hidden');
@@ -40,19 +40,19 @@ async function formValidation(data) {
     if (data.errors) {
       if (data.errors[0].message === 'Amount must be a positive number') {
         const message = 'Bid amount must be a positive number.';
-        bidMessage.classList.remove('hidden');
         bidMessage.innerHTML = `<p>${message}</p>`;
+        bidMessage.classList.remove('hidden');
       } else if (
         data.errors[0].message ===
         'You do not have enough balance to bid this amount'
       ) {
         const message = 'You do not have enough credits to bid this amount.';
-        bidMessage.classList.remove('hidden');
         bidMessage.innerHTML = `<p>${message}</p>`;
+        bidMessage.classList.remove('hidden');
       } else {
         const message = 'Your bid must be higher than the current bid.';
-        bidMessage.classList.remove('hidden');
         bidMessage.innerHTML = `<p>${message}</p>`;
+        bidMessage.classList.remove('hidden');
       }
     } else {
       bidMessage.classList.add('hidden');

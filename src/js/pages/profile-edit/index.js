@@ -29,8 +29,8 @@ async function formValidation() {
 
   if (avatar === '') {
     const message = 'Avatar is required.';
-    avatarError.classList.remove('hidden');
     avatarError.innerHTML = `<p>${message}</p>`;
+    avatarError.classList.remove('hidden');
     isAvatarValid = false;
   } else {
     avatarError.classList.add('hidden');

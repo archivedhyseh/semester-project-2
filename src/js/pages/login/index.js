@@ -19,8 +19,8 @@ async function loginValidation(data) {
 
   if (data.errors) {
     const message = 'Invalid email or password.';
-    loginMessage.classList.remove('hidden');
     loginMessage.innerHTML = `<p>${message}</p>`;
+    loginMessage.classList.remove('hidden');
   } else if (!(id === null || id === '')) {
     loginMessage.classList.add('hidden');
     localStorage.setItem('name', data.name);
