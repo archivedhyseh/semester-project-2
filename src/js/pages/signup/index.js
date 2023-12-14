@@ -39,10 +39,19 @@ async function signupValidation(data) {
         signupMessage.innerHTML = `<p>${message}</p>`;
       } else {
         if (data.errors[i].path[0] === 'name') {
-          const message =
-            'Names can only use letters, numbers and underscores.';
-          signupNameError.classList.remove('hidden');
-          signupNameError.innerHTML = `<p>${message}</p>`;
+          if (
+            data.errors[0].message ===
+            'Name cannot be greater than 20 characters'
+          ) {
+            const message = 'Names cannot be more than 20 characters long.';
+            signupNameError.classList.remove('hidden');
+            signupNameError.innerHTML = `<p>${message}</p>`;
+          } else {
+            const message =
+              'Names can only use letters, numbers and underscores.';
+            signupNameError.classList.remove('hidden');
+            signupNameError.innerHTML = `<p>${message}</p>`;
+          }
         }
 
         if (data.errors[i].path[0] === 'email') {
