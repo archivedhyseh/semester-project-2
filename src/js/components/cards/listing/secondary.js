@@ -6,11 +6,17 @@ export function renderSecondary(data) {
   // description
   const description = renderDescription(data);
 
+  // offers
+  const offers = renderOffers(data);
+
   // others
   const others = renderOthers(data);
 
   // append
   container.appendChild(description);
+  if (!(offers === undefined)) {
+    container.appendChild(offers);
+  }
   container.appendChild(others);
 
   // return
@@ -38,6 +44,48 @@ function renderDescription(data) {
 
   // return
   return container;
+}
+
+function renderOffers(data) {
+  const offers = data.bids.slice(0, 5);
+
+  if (offers.length > 0) {
+    // container
+    const container = document.createElement('div');
+
+    // wrapper
+    const wrapper = document.createElement('div');
+
+    // label
+    const label = document.createElement('h3');
+    label.classList.add('text-xl');
+    label.innerText = 'Offers';
+
+    // offers
+    offers.forEach((offer) => {
+      // name
+      const name = document.createElement('p');
+      name.classList.add('font-bold');
+      name.innerText = `${offer.bidderName}: `;
+
+      // amount
+      const amount = document.createElement('span');
+      amount.classList.add('font-normal', 'text-neutral-800');
+      amount.innerText = `${offer.amount} credits`;
+
+      // append
+      name.appendChild(amount);
+      wrapper.appendChild(name);
+    });
+
+    // append
+    container.appendChild(label);
+    container.appendChild(wrapper);
+
+    return container;
+  } else {
+    return undefined;
+  }
 }
 
 function renderOthers(data) {
