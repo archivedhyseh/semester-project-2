@@ -246,7 +246,7 @@ function renderIsLoggedIn() {
   // label
   const label = document.createElement('label');
   label.classList.add('text-neutral-600');
-  label.htmlFor = 'bid-input';
+  label.htmlFor = 'bid-amount';
   label.innerText = 'Amount to bid';
 
   // wrapper
