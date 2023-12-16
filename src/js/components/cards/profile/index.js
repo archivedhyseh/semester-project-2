@@ -21,8 +21,10 @@ export function renderProfile(data) {
   const button = document.createElement('a');
   button.href = './profile-edit.html';
   button.classList.add(
+    'h-fit',
     'w-full',
     'cursor-pointer',
+    'justify-end',
     'rounded-md',
     'bg-neutral-900',
     'px-3',
@@ -30,7 +32,9 @@ export function renderProfile(data) {
     'text-center',
     'font-bold',
     'text-white',
-    'sm:h-fit',
+    'transition',
+    'duration-200',
+    'hover:bg-neutral-600',
     'sm:w-fit',
   );
   button.innerText = 'Edit profile';
