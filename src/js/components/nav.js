@@ -29,9 +29,9 @@ function primaryNavigation() {
   const container = document.querySelector('#primary-navigation');
 
   container.innerHTML = `
-    <a href="./index.html" class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2">Home</a>
-    <a href="./explore.html" class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2">Explore</a>
-    <a href="./create.html" class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2">Create</a>
+    <a href="./index.html" aria-label="Home" class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2">Home</a>
+    <a href="./explore.html" aria-label="Explore" class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2">Explore</a>
+    <a href="./create.html" aria-label="Create" class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2">Create</a>
     `;
 }
 
@@ -56,6 +56,7 @@ function secondaryNavigation() {
 
   const profile = document.createElement('a');
   profile.href = './profile.html';
+  profile.ariaLabel = 'Profile';
   profile.classList.add(
     'rounded-lg',
     'p-3',
@@ -67,6 +68,7 @@ function secondaryNavigation() {
   profile.innerText = 'Profile';
 
   const logout = document.createElement('button');
+  logout.ariaLabel = 'Sign out';
   logout.classList.add(
     'rounded-lg',
     'p-3',

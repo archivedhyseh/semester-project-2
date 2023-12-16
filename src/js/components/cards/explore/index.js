@@ -35,6 +35,7 @@ export function renderListings(data, limit) {
     // anchor
     const anchor = document.createElement('a');
     anchor.href = `./listing.html?id=${listing.id}`;
+    anchor.ariaLabel = `View details on ${listing.title}`;
     anchor.classList.add(
       'absolute',
       'h-full',

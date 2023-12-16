@@ -18,17 +18,26 @@ export function renderAvatar(data) {
 
   // image
   const image = document.createElement('img');
-  image.classList.add(
-    'absolute',
-    'h-full',
-    'w-full',
-    'overflow-hidden',
-    'object-cover',
-  );
   if (data.avatar === null || data.avatar === '') {
     image.src = './src/images/avatar.png';
+    image.alt = `Avatar of ${data.name}`;
+    image.classList.add(
+      'absolute',
+      'h-full',
+      'w-full',
+      'overflow-hidden',
+      'object-cover',
+    );
   } else {
     image.src = data.avatar;
+    image.alt = `Avatar of ${data.name}`;
+    image.classList.add(
+      'absolute',
+      'h-full',
+      'w-full',
+      'overflow-hidden',
+      'object-cover',
+    );
   }
 
   // append
