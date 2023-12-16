@@ -5,20 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./dist/css/main.css" />
+    <script src="./src/js/components/nav.js" defer></script>
     <script type="module" src="./src/js/pages/profile/index.js"></script>
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
+    <header class="sticky left-0 top-0 z-20 bg-neutral-50 md:static">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex min-h-[4rem] justify-between md:justify-normal">
+          <div class="flex items-center">
+            <a href="./index.html" class="px-3 py-2 font-bold">SWIFTLY</a>
+          </div>
+          <div class="flex items-center md:hidden">
+            <button
+              class="px-3 py-2"
+              id="navigation-button"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Menu</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-6 w-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 9h16.5m-16.5 6.75h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="absolute left-0 top-16 hidden h-screen w-full items-center bg-neutral-50 md:static md:flex md:h-auto md:justify-between"
+            id="navigation-menu"
+          >
+            <div class="flex flex-col md:flex-row" id="primary-navigation">
+              <a
+                href="./index.html"
+                class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2"
+                >Home</a
+              >
+              <a
+                href="./explore.html"
+                class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2"
+                >Explore</a
+              >
+            </div>
+            <div class="flex flex-col md:flex-row" id="secondary-navigation">
+              <a
+                href="./login.html"
+                class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2"
+                >Log in</a
+              >
+              <a
+                href="./signup.html"
+                class="rounded-lg p-3 transition duration-200 hover:bg-neutral-200 md:py-2"
+                >Sign up</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
     <main>
       <section id="profile-section" class="bg-white">
         <div class="mx-auto max-w-6xl">
-          <div class="flex flex-col gap-3 px-5 py-5">
+          <div class="flex flex-col px-3 py-5">
             <div
-              class="flex flex-col gap-5 rounded-md bg-neutral-100 p-3 sm:flex-row sm:p-5"
+              class="flex h-full w-full flex-col gap-3 rounded-md bg-neutral-50 p-3 md:flex-row"
               id="profile-container"
             >
-              <div class="flex flex-row justify-center">
+              <div class="m-3 flex flex-row justify-center">
                 <div
-                  class="relative aspect-square h-32 w-32 overflow-hidden rounded-full"
+                  class="relative aspect-square h-32 w-32 overflow-hidden rounded-full sm:h-40 sm:w-40"
                 >
                   <div
                     class="absolute h-full w-full animate-pulse overflow-hidden bg-neutral-300 object-cover"
@@ -28,7 +91,9 @@
               <div
                 class="flex w-full flex-col gap-5 sm:flex-row sm:justify-between"
               >
-                <div class="flex w-full flex-col justify-between gap-5 sm:w-64">
+                <div
+                  class="flex w-full flex-col flex-wrap gap-5 sm:max-w-[16rem]"
+                >
                   <div
                     class="h-10 w-full animate-pulse rounded-md bg-neutral-300"
                   ></div>
@@ -37,7 +102,7 @@
                   ></div>
                 </div>
                 <div
-                  class="h-10 w-full animate-pulse rounded-md bg-neutral-300 sm:w-32"
+                  class="h-10 w-full animate-pulse rounded-md bg-neutral-300 sm:max-w-[8rem]"
                 ></div>
               </div>
             </div>
@@ -45,5 +110,49 @@
         </div>
       </section>
     </main>
+    <footer class="mt-auto">
+      <div class="bg-neutral-50">
+        <div class="mx-auto max-w-6xl">
+          <div class="px-3 py-5">
+            <div class="flex flex-row flex-wrap justify-center">
+              <div class="flex flex-wrap justify-center">
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  About
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Careers
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Developers
+                </p>
+              </div>
+              <div class="flex flex-wrap justify-center">
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Privacy policy
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Terms of service
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Cookie preferences
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
