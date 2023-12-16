@@ -39,6 +39,21 @@ function secondaryNavigation() {
   const container = document.querySelector('#secondary-navigation');
   container.innerHTML = '';
 
+  const credits = document.createElement('p');
+  credits.classList.add(
+    'hidden',
+    'cursor-default',
+    'items-center',
+    'rounded-lg',
+    'p-3',
+    'transition',
+    'duration-200',
+    'hover:bg-neutral-200',
+    'md:inline',
+    'md:py-2',
+  );
+  credits.innerText = '$' + localStorage.getItem('credits');
+
   const profile = document.createElement('a');
   profile.href = './profile.html';
   profile.classList.add(
@@ -64,13 +79,15 @@ function secondaryNavigation() {
   );
   logout.innerText = 'Sign out';
   logout.addEventListener('click', () => {
+    localStorage.removeItem('credits');
+    localStorage.removeItem('name');
     localStorage.removeItem('token');
-    console.log('removed token');
     setTimeout(() => {
       window.location = './index.html';
     }, 100);
   });
 
+  container.appendChild(credits);
   container.appendChild(profile);
   container.appendChild(logout);
 
