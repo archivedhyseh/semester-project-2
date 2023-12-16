@@ -1,14 +1,7 @@
 export function renderInformation(data) {
   // container
   const container = document.createElement('div');
-  container.classList.add(
-    'flex',
-    'flex-col',
-    'justify-between',
-    'gap-5',
-    'sm:items-start',
-    'flex-wrap',
-  );
+  container.classList.add('flex', 'flex-col', 'flex-wrap', 'gap-5');
 
   // wrapper
   const wrapper = document.createElement('div');
