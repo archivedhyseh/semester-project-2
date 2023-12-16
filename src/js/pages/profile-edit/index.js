@@ -47,3 +47,13 @@ async function formValidation() {
     }
   }
 }
+
+function checkToken() {
+  const token = localStorage.getItem('token');
+
+  if (token === null || token === '') {
+    window.location = './index.html';
+  }
+}
+
+checkToken();

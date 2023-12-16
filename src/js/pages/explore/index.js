@@ -23,6 +23,7 @@ const listings = async (
   search = '',
 ) => {
   const data = await getListings(limit, offset, sort, active, search);
+  console.log(data);
 
   if (data.errors) {
     const section = document.querySelector('#explore-section');

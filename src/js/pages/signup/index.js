@@ -141,3 +141,13 @@ async function autoLogin(email, password) {
     }, 100);
   }
 }
+
+function checkToken() {
+  const token = localStorage.getItem('token');
+
+  if (token != null || token === '') {
+    window.location = './index.html';
+  }
+}
+
+checkToken();

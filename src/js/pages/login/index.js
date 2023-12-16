@@ -69,3 +69,13 @@ async function loginValidation() {
     }
   }
 }
+
+function checkToken() {
+  const token = localStorage.getItem('token');
+
+  if (token != null || token === '') {
+    window.location = './index.html';
+  }
+}
+
+checkToken();
