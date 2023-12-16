@@ -1,4 +1,5 @@
 import { postBid } from '../../api/listings/bids.js';
+import { getProfile } from '../../api/profiles/profiles.js';
 
 export function placeBid(data) {
   const bidButton = document.querySelector('#bid-button');
@@ -55,8 +56,7 @@ async function formValidation(data) {
         bidMessage.classList.remove('hidden');
       }
     } else {
-      bidMessage.classList.add('hidden');
-      setTimeout(window.location.reload(), 100);
+      reloadPage();
     }
   }
 }
@@ -66,5 +66,22 @@ function getHighestBidder(data) {
     return data[0].bidderName;
   } else {
     return undefined;
+  }
+}
+
+async function reloadPage() {
+  const name = localStorage.getItem('name');
+  const data = await getProfile(name);
+
+  if (data.errors) {
+    localStorage.setItem('credits', 'Error');
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
+  } else {
+    localStorage.setItem('credits', data.credits);
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   }
 }
