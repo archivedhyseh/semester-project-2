@@ -15,7 +15,7 @@ navBtn.addEventListener('click', () => {
   }
 });
 
-function navLoad() {
+export function navLoad() {
   const token = localStorage.getItem('token');
 
   if (token) {
