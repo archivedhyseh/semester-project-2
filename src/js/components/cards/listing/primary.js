@@ -204,13 +204,16 @@ function renderEditDelete() {
   const editBtn = document.createElement('button');
   editBtn.classList.add(
     'w-full',
-    'cursor-pointer',
+    'cursor-default',
     'rounded-md',
     'bg-neutral-900',
     'px-3',
     'py-2',
     'font-bold',
     'text-white',
+    'transition',
+    'duration-200',
+    'hover:bg-neutral-600',
   );
   editBtn.innerText = 'Edit';
 
@@ -218,13 +221,16 @@ function renderEditDelete() {
   const deleteBtn = document.createElement('button');
   deleteBtn.classList.add(
     'w-full',
-    'cursor-pointer',
+    'cursor-default',
     'rounded-md',
     'bg-neutral-900',
     'px-3',
     'py-2',
     'font-bold',
     'text-white',
+    'transition',
+    'duration-200',
+    'hover:bg-neutral-600',
   );
   deleteBtn.innerText = 'Delete';
 
