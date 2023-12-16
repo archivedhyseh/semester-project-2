@@ -1,7 +1,7 @@
 export function renderAvatar(data) {
   // image container
   const container = document.createElement('div');
-  container.classList.add('flex', 'flex-row', 'justify-center');
+  container.classList.add('m-3', 'flex', 'flex-row', 'justify-center');
 
   // image wrapper
   const wrapper = document.createElement('div');
@@ -12,6 +12,8 @@ export function renderAvatar(data) {
     'w-32',
     'overflow-hidden',
     'rounded-full',
+    'sm:h-40',
+    'sm:w-40',
   );
 
   // image
@@ -23,7 +25,11 @@ export function renderAvatar(data) {
     'overflow-hidden',
     'object-cover',
   );
-  image.src = data.avatar;
+  if (data.avatar === null || data.avatar === '') {
+    image.src = './src/images/avatar.png';
+  } else {
+    image.src = data.avatar;
+  }
 
   // append
   wrapper.appendChild(image);
