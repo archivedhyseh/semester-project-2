@@ -17,6 +17,6 @@ export function mediaListener() {
         resetPreview();
       }
     }),
-    10000,
+    1000,
   );
 }
