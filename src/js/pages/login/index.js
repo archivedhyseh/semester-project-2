@@ -51,6 +51,7 @@ async function loginValidation() {
     } else {
       if (!(id === null || id === '')) {
         loginMessage.classList.add('hidden');
+        localStorage.setItem('credits', data.credits);
         localStorage.setItem('name', data.name);
         localStorage.setItem('token', data.accessToken);
         setTimeout(() => {
@@ -58,6 +59,7 @@ async function loginValidation() {
         }, 100);
       } else {
         loginMessage.classList.add('hidden');
+        localStorage.setItem('credits', data.credits);
         localStorage.setItem('name', data.name);
         localStorage.setItem('token', data.accessToken);
         setTimeout(() => {

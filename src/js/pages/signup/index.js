@@ -125,6 +125,7 @@ async function autoLogin(email, password) {
     signupMessage.classList.remove('hidden');
   } else if (!(id === null || id === '')) {
     signupMessage.classList.add('hidden');
+    localStorage.setItem('credits', data.credits);
     localStorage.setItem('name', data.name);
     localStorage.setItem('token', data.accessToken);
     setTimeout(() => {
@@ -132,6 +133,7 @@ async function autoLogin(email, password) {
     }, 100);
   } else {
     signupMessage.classList.add('hidden');
+    localStorage.setItem('credits', data.credits);
     localStorage.setItem('name', data.name);
     localStorage.setItem('token', data.accessToken);
     setTimeout(() => {
