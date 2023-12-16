@@ -8,7 +8,7 @@
     <script src="./src/js/components/nav.js" defer></script>
     <script type="module" src="./src/js/pages/listing/index.js"></script>
   </head>
-  <body>
+  <body class="flex min-h-screen flex-col">
     <header class="sticky left-0 top-0 z-20 bg-neutral-50 md:static">
       <div class="mx-auto max-w-6xl">
         <div class="flex min-h-[4rem] justify-between md:justify-normal">
@@ -142,5 +142,49 @@
         </div>
       </section>
     </main>
+    <footer class="mt-auto">
+      <div class="bg-neutral-50">
+        <div class="mx-auto max-w-6xl">
+          <div class="px-3 py-5">
+            <div class="flex flex-row flex-wrap justify-center">
+              <div class="flex flex-wrap justify-center">
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  About
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Careers
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Developers
+                </p>
+              </div>
+              <div class="flex flex-wrap justify-center">
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Privacy policy
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Terms of service
+                </p>
+                <p
+                  class="cursor-default whitespace-nowrap p-3 underline-offset-1 hover:underline md:py-2"
+                >
+                  Cookie preferences
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
