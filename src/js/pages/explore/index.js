@@ -27,6 +27,9 @@ const listings = async (
   if (data.errors) {
     const section = document.querySelector('#explore-section');
     renderError(section);
+  } else if (data.length === 0) {
+    const section = document.querySelector('#explore-section');
+    renderError(section);
   } else {
     renderListings(data, limit);
     pagination(offset, data, limit, page);
@@ -36,8 +39,10 @@ const listings = async (
 
 listings(limit, offset, descending, true, search);
 
-window.addEventListener('popstate', (e) => {
-  console.log(e);
-  console.log('hello world');
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('popstate', () => {
   window.location.reload();
 });
