@@ -4,17 +4,12 @@ import { mediaListener } from './media.js';
 mediaListener();
 
 const editAvatar = document.querySelector('#edit-avatar');
+const editMessage = document.querySelector('#edit-message');
 const editUpdate = document.querySelector('#edit-update');
-const editCancel = document.querySelector('#edit-cancel');
 
 editUpdate.addEventListener('click', (e) => {
   e.preventDefault();
   formValidation();
-});
-
-editCancel.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.location = './profile.html';
 });
 
 async function formValidation() {
@@ -42,9 +37,13 @@ async function formValidation() {
     const data = await putAvatar(name, avatar);
 
     if (data.erros) {
-      console.log('something wrong with api');
+      const message = 'Something went wrong. Please try again later.';
+      editMessage.innerHTML = `<p>${message}</p>`;
+      editMessage.classList.remove('hidden');
     } else {
-      setTimeout((window.location = './profile.html'), 100);
+      setTimeout(() => {
+        window.location = './profile.html';
+      }, 100);
     }
   }
 }
