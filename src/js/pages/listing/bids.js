@@ -50,6 +50,10 @@ async function formValidation(data) {
         const message = 'You do not have enough credits to bid this amount.';
         bidMessage.innerHTML = `<p>${message}</p>`;
         bidMessage.classList.remove('hidden');
+      } else if (data.errors[0].message === 'This listing has already ended') {
+        const message = 'This auction has already ended.';
+        bidMessage.innerHTML = `<p>${message}</p>`;
+        bidMessage.classList.remove('hidden');
       } else {
         const message = 'Your bid must be higher than the current bid.';
         bidMessage.innerHTML = `<p>${message}</p>`;
