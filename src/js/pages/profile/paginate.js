@@ -3,19 +3,22 @@ import { renderMoreListings } from '../../components/cards/profile/listings/inde
 
 export async function pagination(data, limit, offset, counter) {
   const name = localStorage.getItem('name');
-  const loadBtn = document.querySelector('#load-button');
+  const container = document.querySelector('#pagination-container');
+  const button = document.querySelector('#pagination-button');
 
   if (data.length < limit) {
-    loadBtn.classList.add('hidden');
+    container.classList.add('hidden');
+    button.classList.add('hidden');
   }
 
-  loadBtn.addEventListener('click', async () => {
+  button.addEventListener('click', async () => {
     counter++;
     offset = 12 * counter;
     const data = await getProfileListings(name, limit, offset, 'desc');
 
     if (data.length < limit) {
-      loadBtn.classList.add('hidden');
+      container.classList.add('hidden');
+      button.classList.add('hidden');
     }
 
     renderMoreListings(data, limit);
