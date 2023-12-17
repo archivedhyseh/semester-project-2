@@ -16,7 +16,7 @@ export function renderInformation(data) {
   // title
   const title = document.createElement('h3');
   title.classList.add('line-clamp-1', 'text-2xl', 'font-bold');
-  if (data.title === '') {
+  if (data.title === null || data.title === '') {
     title.innerText = 'No title';
   } else {
     title.innerText = data.title;
