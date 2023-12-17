@@ -3,8 +3,7 @@ import { BASE_URL, PROFILES_ENDPOINT } from '../api.js';
 export async function getProfile(name) {
   const token = localStorage.getItem('token');
   try {
-    const param = `?_listings=true`;
-    const res = await fetch(`${BASE_URL}${PROFILES_ENDPOINT}${name}${param}`, {
+    const res = await fetch(`${BASE_URL}${PROFILES_ENDPOINT}${name}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
