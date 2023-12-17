@@ -7,7 +7,6 @@ import { param } from '../../utility/params.js';
 
 let page = Number(param.get('page')); // converts to number
 const search = getSearchParam();
-// console.log(search);
 
 let limit = 13;
 let offset = 12 * page;
@@ -23,7 +22,6 @@ const listings = async (
   search = '',
 ) => {
   const data = await getListings(limit, offset, sort, active, search);
-  console.log(data);
 
   if (data.errors) {
     const section = document.querySelector('#explore-section');

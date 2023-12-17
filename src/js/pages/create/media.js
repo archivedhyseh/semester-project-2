@@ -23,10 +23,8 @@ export function mediaListener() {
       const input = createMedia.value;
 
       if (!(input === '')) {
-        console.log(input);
         updatePreview(input);
       } else {
-        console.log('nothing to do');
         resetPreview();
       }
     }),

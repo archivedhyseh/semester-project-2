@@ -4,11 +4,8 @@ import { renderInformation } from './information.js';
 export function renderListings(data, limit) {
   // copy data
   const listings = JSON.parse(JSON.stringify(data));
-  if (listings.length >= limit) {
+  if (listings.length >= limit && listings.length > 12) {
     listings.pop();
-    console.log('removed last item');
-  } else {
-    console.log('did not remove last item');
   }
 
   // grid

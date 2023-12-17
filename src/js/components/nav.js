@@ -19,7 +19,6 @@ export function navLoad() {
   const token = localStorage.getItem('token');
 
   if (token) {
-    console.log('token found');
     primaryNavigation();
     secondaryNavigation();
   }

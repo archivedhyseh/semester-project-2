@@ -6,7 +6,6 @@ export async function pagination(data, limit, offset, counter) {
   const loadBtn = document.querySelector('#load-button');
 
   if (data.length < limit) {
-    console.log('nothing to load');
     loadBtn.classList.add('hidden');
   }
 
@@ -14,9 +13,11 @@ export async function pagination(data, limit, offset, counter) {
     counter++;
     offset = 12 * counter;
     const data = await getProfileListings(name, limit, offset, 'desc');
+
     if (data.length < limit) {
       loadBtn.classList.add('hidden');
     }
+
     renderMoreListings(data, limit);
   });
 }

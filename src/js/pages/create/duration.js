@@ -33,7 +33,5 @@ function getDuration(value) {
       date = new Date(today).toISOString();
   }
 
-  console.log(date);
-
   return date;
 }

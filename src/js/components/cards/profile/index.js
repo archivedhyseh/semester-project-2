@@ -20,6 +20,7 @@ export function renderProfile(data) {
   // edit
   const button = document.createElement('a');
   button.href = './profile-edit.html';
+  button.ariaLabel = 'Edit profile';
   button.classList.add(
     'h-fit',
     'w-full',
@@ -42,6 +43,7 @@ export function renderProfile(data) {
   const avatar = renderAvatar(data);
   const information = renderInformation(data);
 
+  // append
   conatiner.appendChild(avatar);
   wrapper.appendChild(information);
   wrapper.appendChild(button);

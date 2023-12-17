@@ -20,7 +20,6 @@ export function renderSecondary(data) {
   container.appendChild(others);
 
   // return
-  console.log(container);
   return container;
 }
 

@@ -36,7 +36,7 @@ export function renderPrimary(data) {
   wrapper.appendChild(loginChecker);
   container.appendChild(wrapper);
 
-  console.log(container);
+  // return
   return container;
 }
 
@@ -104,7 +104,6 @@ function checkLoggedIn(data) {
 
   // if statement
   if (token === null || token === '') {
-    console.log('no token');
     const login = renderNotloggedIn();
     container = login;
     return container;
@@ -113,7 +112,6 @@ function checkLoggedIn(data) {
     container = options;
     return container;
   } else {
-    console.log('token found');
     const bid = renderIsLoggedIn();
     container = bid;
     return container;
@@ -122,7 +120,6 @@ function checkLoggedIn(data) {
 
 function renderNotloggedIn() {
   const id = param.get('id');
-  console.log(id);
 
   // container
   const container = document.createElement('div');
@@ -188,9 +185,6 @@ function renderNotloggedIn() {
 }
 
 function renderEditDelete() {
-  const id = param.get('id');
-  console.log(id);
-
   // container
   const container = document.createElement('div');
   container.classList.add('flex', 'flex-col', 'gap-2');
@@ -206,6 +200,7 @@ function renderEditDelete() {
 
   // login button
   const editBtn = document.createElement('button');
+  editBtn.disabled = true;
   editBtn.classList.add(
     'w-full',
     'cursor-default',
@@ -223,6 +218,7 @@ function renderEditDelete() {
 
   // signup button
   const deleteBtn = document.createElement('button');
+  deleteBtn.disabled = true;
   deleteBtn.classList.add(
     'w-full',
     'cursor-default',

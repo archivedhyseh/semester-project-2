@@ -7,7 +7,6 @@ export function convertTags(input) {
     tag.split(',').forEach((tag) => {
       if (tag.length >= 2 && !arr.includes(tag)) {
         arr.push(tag);
-        console.log(arr);
       }
     });
   }

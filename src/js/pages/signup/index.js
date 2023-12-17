@@ -62,7 +62,6 @@ async function signupValidation() {
   }
 
   if (isNameValid === true && isEmailValid === true && isPasswordValid) {
-    console.log('form is valid');
     const data = await register(name, email, password);
 
     if (data.errors) {
@@ -110,8 +109,6 @@ async function signupValidation() {
     } else {
       autoLogin(email, password);
     }
-  } else {
-    console.log('form not valid');
   }
 }
 
