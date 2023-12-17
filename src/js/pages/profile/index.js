@@ -41,7 +41,7 @@ const listings = async (limit, offset) => {
   } else if (data.length === 0) {
     section.innerHTML = `
     <div class="mx-auto max-w-6xl">
-      <div class="flex h-[50vh] max-h-[30rem] min-h-[20rem] px-3 py-5">
+      <div class="flex h-[50vh] max-h-[30rem] min-h-[20rem] px-3 my-5">
         <div class="flex h-full w-full flex-col items-center justify-center gap-5 rounded-md bg-neutral-50 p-3">
           <div class="flex w-full flex-col items-center gap-5">
             <h2 class="text-2xl font-bold">Create auction listings</h2>

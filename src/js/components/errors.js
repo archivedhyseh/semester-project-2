@@ -1,7 +1,7 @@
 export function renderError(target) {
   target.innerHTML = `
   <div class="mx-auto max-w-6xl">
-    <div class="flex h-[50vh] max-h-[40rem] min-h-[30rem] px-3 py-5">
+    <div class="flex h-[50vh] max-h-[40rem] min-h-[30rem] px-3 my-5">
       <div class="flex h-full w-full flex-col items-center justify-center gap-5 rounded-md bg-neutral-50 p-3">
         <div class="flex w-full max-w-[28rem] flex-col gap-5">
           <h2 class="text-2xl font-bold md:text-4xl">Something went wrong</h2>
