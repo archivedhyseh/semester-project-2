@@ -36,7 +36,12 @@ function renderDescription(data) {
   // description
   const description = document.createElement('p');
   description.classList.add('text-neutral-800');
-  description.innerText = data.description;
+
+  if (data.description === null || data.description === '') {
+    description.innerText = 'No description';
+  } else {
+    description.innerText = data.description;
+  }
 
   // append
   container.appendChild(label);

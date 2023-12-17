@@ -14,7 +14,11 @@ export function renderPrimary(data) {
   // title
   const title = document.createElement('h2');
   title.classList.add('text-5xl', 'font-bold');
-  title.innerText = data.title;
+  if (data.title === null || data.title === '') {
+    title.innerText = 'No title';
+  } else {
+    title.innerText = data.title;
+  }
 
   // current bid
   const bid = renderBids(data);
