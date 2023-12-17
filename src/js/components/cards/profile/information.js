@@ -45,7 +45,7 @@ function renderStats(data) {
 
   // listings
   const listings = document.createElement('li');
-  listings.innerText = `${data.listings.length} listings`;
+  listings.innerText = `${data._count.listings} listings`;
 
   // append
   container.appendChild(credits);
