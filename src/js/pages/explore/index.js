@@ -5,7 +5,7 @@ import { pagination } from './paginate.js';
 import { getSearchParam, searchListener } from './search.js';
 import { param } from '../../utility/params.js';
 
-let page = Number(param.get('page')); // converts to number
+let page = Number(param.get('page'));
 const search = getSearchParam();
 
 let limit = 13;
@@ -29,6 +29,7 @@ const listings = async (
   } else if (data.length === 0) {
     const section = document.querySelector('#explore-section');
     renderError(section);
+    searchListener(page);
   } else {
     renderListings(data, limit);
     pagination(offset, data, limit, page);

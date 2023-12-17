@@ -4,9 +4,9 @@ const searchInput = document.querySelector('#search-input');
 const searchBtn = document.querySelector('#search-button');
 
 export const getSearchParam = () => {
-  let search = String(param.get('search')); // converts to string
+  let search = param.get('search');
 
-  if (search === 'null' || search === '') {
+  if (search === null || search === '') {
     search = '';
     searchInput.value = search;
     param.delete('search');
